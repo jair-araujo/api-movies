@@ -1,0 +1,14 @@
+{
+  "name": "api-movies",
+  "version": "1.0.0",
+  "description": "API desenvolvido para praticar o aprendizado de NodeJs no programa Explorer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jair de Andrade Araujo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
