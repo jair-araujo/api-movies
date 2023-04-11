@@ -51,11 +51,10 @@ class UsersController {
 
     await database.run(
       `
-
-    UPDATE user SET
+    UPDATE users SET
     name = ?,
-    email = ?
-    updated_at = DATETIME('now)
+    email = ?,
+    update_at = DATETIME('now')
     WHERE id = ?
     `,
       [user.name, user.email, id]
