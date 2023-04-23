@@ -5,7 +5,7 @@ class NotesController {
     const { title, description, tags, rating } = request.body;
     const { user_id } = request.params;
 
-    const note_id = await knex('notes').insert({
+    const [note_id] = await knex('notes').insert({
       title,
       description,
       rating,
@@ -23,6 +23,14 @@ class NotesController {
     await knex('tags').insert(tagsInsert);
 
     response.json();
+  }
+
+  async show(request, response) {
+    const { id } = request.params;
+
+    const note = await knex('notes').where({ id }).first();
+
+    return response.json(note);
   }
 }
 
